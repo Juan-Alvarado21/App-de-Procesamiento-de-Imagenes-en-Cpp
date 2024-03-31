@@ -1,2 +1,2 @@
 # Procesador-de-Imagenes-en-C++-
-Este proyecto es un prototipo de software en C++ con interfaz Qt para el procesamiento digital de imágenes. Implementa filtros y transformaciones propios, sin librerías externas, enfocado para aplicaciones de algorítmos.
+Este proyecto es un software prototipo desarrollado en C++ que emplea Qt para la interfaz gráfica, orientado al procesamiento digital de imágenes. Mediante las diferentes aplicaciones como filtros y transformaciones que actúan sobre el bitmap, busca adentrarse en la comprensión de los principios de la visión por computadora y del álgebra lineal, aprovechando herramientas de C++ para la creación de interfaces gráficas.
