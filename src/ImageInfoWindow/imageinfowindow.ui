@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImageInfoWindow</class>
+ <widget class="QDialog" name="ImageInfoWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>1100</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Roboto</family>
+    <pointsize>14</pointsize>
+    <italic>true</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="face-raspberry">
+    <normaloff>../computer_vision/Analizador/Analizador_imagen/src/ImageInfoWindow</normaloff>../computer_vision/Analizador/Analizador_imagen/src/ImageInfoWindow</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 250 italic 14pt &quot;Roboto&quot;;
+border-top-color: rgb(249, 240, 107);
+gridline-color: rgb(255, 255, 255);
+background-color: rgb(192, 191, 188);</string>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <widget class="QLabel" name="imageInfoLabel">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>180</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Roboto</family>
+     <pointsize>11</pointsize>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+font: 700 11pt &quot;Roboto&quot;;
+border-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCustomPlot" name="CustomPlot" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>190</y>
+     <width>600</width>
+     <height>450</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QCustomPlot" name="ScatterPlot" native="true">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>190</y>
+     <width>600</width>
+     <height>450</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header location="global">qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -12,7 +12,7 @@ ImageInfoWindow::ImageInfoWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
-    // Declaramos las Gráficas en el Widget para planos RGB y grises
+    // Declaramos las Gráficas en el Widget
     graphTotal = ui->CustomPlot->addGraph();
     graphRed = ui->CustomPlot->addGraph();
     graphGreen = ui->CustomPlot->addGraph();
@@ -26,21 +26,21 @@ ImageInfoWindow::ImageInfoWindow(QWidget *parent) :
 
 
     // Asignación de color a la gráfica
-    // El histograma total con color Gris
+    // El histograma total con color naranja y transparencia
     graphTotal->setPen(QPen(QColor(50, 50, 50, 200))); // Color Gris con algo de transparencia
     graphTotal->setBrush(QColor(50, 50, 50, 50)); // Pincel con el mismo color pero más transparencia
 
     // El histograma del canal rojo
     graphRed->setPen(QPen(QColor(255, 0, 0, 200))); // Rojo
-    graphRed->setBrush(QColor(255, 0, 0, 50)); // Pincel con más transparencia
+    graphRed->setBrush(QColor(255, 0, 0, 50)); // Pincel con el mismo color pero más transparencia
 
     // El histograma del canal verde
     graphGreen->setPen(QPen(QColor(0, 255, 0, 200))); // Verde
-    graphGreen->setBrush(QColor(0, 255, 0, 50)); // Pincel con más transparencia
+    graphGreen->setBrush(QColor(0, 255, 0, 50)); // Pincel con el mismo color pero más transparencia
 
     // El histograma del canal azul
     graphBlue->setPen(QPen(QColor(0, 0, 255, 200))); // Azul
-    graphBlue->setBrush(QColor(0, 0, 255, 50)); // Pincel con más transparencia
+    graphBlue->setBrush(QColor(0, 0, 255, 50)); // Pincel con el mismo color pero más transparencia
 
     // Configuración de los ejes
     ui->CustomPlot->xAxis->setLabel("Valor de color");
@@ -61,7 +61,7 @@ ImageInfoWindow::ImageInfoWindow(QWidget *parent) :
     ui->CustomPlot->legend->setBrush(QColor(255, 255, 255, 150));
     ui->CustomPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignRight);
 
-    // Actualizar el Widget del grafico
+    // Refrescar el gráfico
     ui->CustomPlot->replot();
 
 
@@ -118,7 +118,7 @@ void ImageInfoWindow::setImageInfo(QString img_output)
         // Actualizar el QLabel con la información de la imagen
         ui->imageInfoLabel->setText(infoText);
 
-        //Generar Histograma y gráfica de dispersión de puntos (color scatter plot)
+        //Generar Histograma
         GenerarHistograma(img_output);
         GenerarColorScatterPlot(img_output);
 
@@ -214,16 +214,16 @@ pxl** ImageInfoWindow::procesar_bitmap(QString img_path) {
     graphGreen->setData(x, yGreen);
     graphBlue->setData(x, yBlue);
 
-    // Llamamos a replot para actualizar el gráfico
+    // Finalmente, llamamos a replot para actualizar el gráfico
     ui->CustomPlot->replot();
 
 
 
     // Limpieza de memoria para el mapa de bits
     for(int i = 0; i < image.width(); i++) {
-        delete[] map[i]; // Libera cada array de pxl
+        delete[] map[i]; // Liberar cada array de pxl
     }
-    delete[] map; // Libera el array de punteros
+    delete[] map; // Liberar el array de punteros
 
     }
 
@@ -238,9 +238,9 @@ void ImageInfoWindow::GenerarColorScatterPlot(QString img_path) {
     // Crear un nuevo gráfico para los puntos de dispersión
     QCPGraph *colorScatter = ui->ScatterPlot->addGraph();
     colorScatter->setLineStyle(QCPGraph::lsNone); // Sin líneas, solo puntos
-    colorScatter->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 4));
-    colorScatter->setPen(QPen(QColor(255, 150, 0, 200))); // Color Naranja con transparencia
-    colorScatter->setBrush(QColor(255,150 , 0, 50)); // Pincel con más transparencia
+    colorScatter->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 4)); // Estilo de los puntos
+    colorScatter->setPen(QPen(QColor(255, 150, 0, 200))); // Color naranja con algo de transparencia
+    colorScatter->setBrush(QColor(255,150 , 0, 50)); // Pincel con el mismo color pero más transparencia
 
 
     QVector<double> x, y;
@@ -253,7 +253,7 @@ void ImageInfoWindow::GenerarColorScatterPlot(QString img_path) {
             // Añadir coordenadas y colores a los vectores
             x.append(color.red());
             y.append(color.green());
-            colors.append(color);
+            colors.append(color); // Utilizaremos este color más adelante
         }
     }
 

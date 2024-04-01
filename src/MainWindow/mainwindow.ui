@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>1200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="face-cool">
+    <normaloff>../computer_vision/Analizador/Analizador_imagen/src/MainWindow</normaloff>../computer_vision/Analizador/Analizador_imagen/src/MainWindow</iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>50</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto Condensed</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Input Image</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>50</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto Condensed</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Output Image</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="img_input">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>150</y>
+      <width>450</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="img_output">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>150</y>
+      <width>450</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_seleccionar">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>100</y>
+      <width>141</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Seleccionar</string>
+    </property>
+    <property name="icon">
+     <iconset theme="insert-image">
+      <normaloff>../computer_vision/Analizador/Analizador_imagen/src/MainWindow</normaloff>../computer_vision/Analizador/Analizador_imagen/src/MainWindow</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_restaurar">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>150</y>
+      <width>141</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Restaurar</string>
+    </property>
+    <property name="icon">
+     <iconset theme="edit-undo">
+      <normaloff>../computer_vision/Analizador/Analizador_imagen/src/MainWindow</normaloff>../computer_vision/Analizador/Analizador_imagen/src/MainWindow</iconset>
+    </property>
+   </widget>
+   <widget class="QSlider" name="slider">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>240</y>
+      <width>200</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="minimum">
+     <number>-255</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelValue">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>230</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>200</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Control del Escalar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOpciones">
+    <property name="title">
+     <string>Opciones</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuTransformaciones">
+    <property name="title">
+     <string>Transformaciones</string>
+    </property>
+    <addaction name="actionBN"/>
+    <addaction name="actionBinario"/>
+    <addaction name="actionBinario_Invertido"/>
+    <addaction name="actionNegativo"/>
+    <addaction name="actionAjustar_Brillo"/>
+    <addaction name="actionAjustar_Contraste"/>
+    <addaction name="actionParabola"/>
+    <addaction name="actionParabolaInv"/>
+    <addaction name="actionPosterizado"/>
+   </widget>
+   <widget class="QMenu" name="menuPosici_n">
+    <property name="title">
+     <string>Posición</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAlgoritmos_ML">
+    <property name="title">
+     <string>Algoritmos ML </string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuInformaci_n">
+    <property name="title">
+     <string>Información</string>
+    </property>
+    <addaction name="mostrarInfo"/>
+    <addaction name="ver_bitmap"/>
+   </widget>
+   <addaction name="menuOpciones"/>
+   <addaction name="menuTransformaciones"/>
+   <addaction name="menuPosici_n"/>
+   <addaction name="menuAlgoritmos_ML"/>
+   <addaction name="menuInformaci_n"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="mostrarInfo">
+   <property name="text">
+    <string>Mostrar</string>
+   </property>
+  </action>
+  <action name="ver_bitmap">
+   <property name="text">
+    <string>Ver Bitmap</string>
+   </property>
+  </action>
+  <action name="Filtro_BN">
+   <property name="text">
+    <string>Blanco y Negro</string>
+   </property>
+  </action>
+  <action name="filtroBN">
+   <property name="text">
+    <string>Filtro BN</string>
+   </property>
+  </action>
+  <action name="actionBN">
+   <property name="text">
+    <string>BN</string>
+   </property>
+  </action>
+  <action name="actionBinario">
+   <property name="text">
+    <string>Binario</string>
+   </property>
+  </action>
+  <action name="actionBinario_Invertido">
+   <property name="text">
+    <string>Binario Invertido</string>
+   </property>
+  </action>
+  <action name="actionNegativo">
+   <property name="text">
+    <string>Negativo</string>
+   </property>
+  </action>
+  <action name="actionAjustar_Brillo">
+   <property name="text">
+    <string>Ajustar Brillo</string>
+   </property>
+  </action>
+  <action name="actionAjustar_Contraste">
+   <property name="text">
+    <string>Ajustar Contraste</string>
+   </property>
+  </action>
+  <action name="actionParabola">
+   <property name="text">
+    <string>Parábola</string>
+   </property>
+  </action>
+  <action name="actionParabolaInv">
+   <property name="text">
+    <string>Parábola Invertida</string>
+   </property>
+  </action>
+  <action name="actionPosterizado">
+   <property name="text">
+    <string>Posterizado</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
