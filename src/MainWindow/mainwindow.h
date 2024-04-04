@@ -9,6 +9,8 @@
 #include<QFileDialog>
 #include "src/ImageInfoWindow/imageinfowindow.h"
 #include "src/Transformations/transformaciones.h"
+#include "src/Lab/lab.h"
+#include<QIcon>
 
 
 
@@ -55,6 +57,7 @@ private slots:
     void Abrir_imagen();
     void Restaurar_imagen();
     void on_mostrarInfo_action();
+    void on_mostrarInfo_Operaciones();
     void on_mostrarBitmap_action();
     void on_FiltroBN_action();
     void on_FiltroBN();

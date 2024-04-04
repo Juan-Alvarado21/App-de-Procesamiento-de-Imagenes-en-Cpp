@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "ui_lab.h"
 #include "ui_mainwindow.h"
 #include "src/ImageInfoWindow/imageinfowindow.h"
 #include "src/Transformations/transformaciones.h"
@@ -6,11 +7,13 @@
 #include<QDebug>
 #include <QIcon>
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Racoonized Image Software ");
     ui->slider->setValue(0);
 
 
@@ -40,7 +43,22 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btn_seleccionar,&QPushButton::clicked, this, &MainWindow:: Abrir_imagen);
     connect(ui->btn_restaurar,&QPushButton::clicked, this, &MainWindow:: Restaurar_imagen);
     connect(ui->mostrarInfo, &QAction::triggered,this,&MainWindow::on_mostrarInfo_action );
+<<<<<<< HEAD
     //connect(ui->mostrarOperaciones, &QAction::triggered,this,&MainWindow::on_mostrarInfo_action );
+=======
+    connect(ui->mostrarOperaciones, &QAction::triggered,this,&MainWindow::on_mostrarInfo_Operaciones);
+    connect(ui->ver_bitmap, &QAction::triggered,this,&MainWindow::on_mostrarBitmap_action );
+    connect(ui->actionBN, &QAction::triggered,this,&MainWindow::on_FiltroBN_action);
+    connect(ui->actionBinario, &QAction::triggered,this,&MainWindow::on_FiltroBinario_action);
+    connect(ui->actionBinarioInv, &QAction::triggered,this,&MainWindow::on_FiltroBinarioInv_action);
+    connect(ui->slider,&QSlider::valueChanged,this,&MainWindow::manejarCambioSlider);
+    connect(ui->actionNegativo, &QAction::triggered,this,&MainWindow::on_FiltroNegativo_action);
+    connect(ui->actionBrillo, &QAction::triggered,this,&MainWindow::on_FiltroAjusteBrillo_action);
+    connect(ui->actionContraste, &QAction::triggered,this,&MainWindow::on_FiltroAjusteContraste_action);
+    connect(ui->actionParabola, &QAction::triggered,this,&MainWindow::on_FiltroParabola_action);
+    connect(ui->actionParabolaInv, &QAction::triggered,this,&MainWindow::on_FiltroParabolaInv_action);
+    connect(ui->actionPosterizado, &QAction::triggered,this,&MainWindow::on_FiltroPosterizado_action);
+>>>>>>> temp-actualizaciones
 
     connect(ui->ver_bitmap, &QAction::triggered,this,&MainWindow::on_mostrarBitmap_action );
     connect(ui->action_BN, &QAction::triggered,this,&MainWindow::on_FiltroBN_action);
@@ -146,6 +164,16 @@ void MainWindow::on_mostrar_Operaciones() {
     operacion->show();
 }
 */
+
+
+void MainWindow::on_mostrarInfo_Operaciones(){
+    Lab* labWindow = new Lab(this);
+    labWindow->setWindowModality(Qt::ApplicationModal); // Establece la modalidad
+    QString aux= img_output;
+    labWindow->mostrar_menu(aux);
+    labWindow->show(); // Muestra Lab como una ventana modal
+}
+
 
 
 

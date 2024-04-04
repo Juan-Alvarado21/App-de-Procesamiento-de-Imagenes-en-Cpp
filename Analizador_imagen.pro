@@ -12,6 +12,7 @@ SOURCES += \
     laboratorio.cpp \
     libs/qcustomplot.cpp \
     src/ImageInfoWindow/imageinfowindow.cpp \
+    src/Lab/lab.cpp \
     src/MainWindow/mainwindow.cpp \
     src/Transformations/transformaciones.cpp \
     src/main.cpp \
@@ -20,13 +21,16 @@ HEADERS += \
     laboratorio.h \
     libs/qcustomplot.h \
     src/ImageInfoWindow/imageinfowindow.h \
+    src/Lab/lab.h \
     src/MainWindow/mainwindow.h \
     src/Transformations/transformaciones.h \
 
 FORMS += \
     laboratorio.ui \
     src/ImageInfoWindow/imageinfowindow.ui \
-    src/MainWindow/mainwindow.ui \
+    src/Lab/lab.ui \
+    src/MainWindow/mainwindow.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
