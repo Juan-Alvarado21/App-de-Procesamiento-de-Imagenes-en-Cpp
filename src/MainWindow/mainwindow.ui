@@ -232,7 +232,7 @@
    </widget>
    <widget class="QMenu" name="menuAlgoritmos_ML">
     <property name="title">
-     <string>Algoritmos ML </string>
+     <string>Algoritmos</string>
     </property>
    </widget>
    <widget class="QMenu" name="menuInformaci_n">
@@ -242,8 +242,15 @@
     <addaction name="mostrarInfo"/>
     <addaction name="ver_bitmap"/>
    </widget>
+   <widget class="QMenu" name="menuOperaciones">
+    <property name="title">
+     <string>Operaciones</string>
+    </property>
+    <addaction name="mostrarOperaciones"/>
+   </widget>
    <addaction name="menuOpciones"/>
    <addaction name="menuTransformaciones"/>
+   <addaction name="menuOperaciones"/>
    <addaction name="menuPosici_n"/>
    <addaction name="menuAlgoritmos_ML"/>
    <addaction name="menuInformaci_n"/>
@@ -302,6 +309,11 @@
   <action name="actionPosterizado">
    <property name="text">
     <string>Posterizado</string>
+   </property>
+  </action>
+  <action name="mostrarOperaciones">
+   <property name="text">
+    <string>Mostrar</string>
    </property>
   </action>
  </widget>

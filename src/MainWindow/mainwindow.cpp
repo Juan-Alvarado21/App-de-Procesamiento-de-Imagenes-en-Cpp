@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "ui_lab.h"
 #include "ui_mainwindow.h"
 #include "src/ImageInfoWindow/imageinfowindow.h"
 #include "src/Transformations/transformaciones.h"
@@ -46,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btn_seleccionar,&QPushButton::clicked, this, &MainWindow:: Abrir_imagen);
     connect(ui->btn_restaurar,&QPushButton::clicked, this, &MainWindow:: Restaurar_imagen);
     connect(ui->mostrarInfo, &QAction::triggered,this,&MainWindow::on_mostrarInfo_action );
+    connect(ui->mostrarOperaciones, &QAction::triggered,this,&MainWindow::on_mostrarInfo_Operaciones);
     connect(ui->ver_bitmap, &QAction::triggered,this,&MainWindow::on_mostrarBitmap_action );
     connect(ui->actionBN, &QAction::triggered,this,&MainWindow::on_FiltroBN_action);
     connect(ui->actionBinario, &QAction::triggered,this,&MainWindow::on_FiltroBinario_action);
@@ -138,6 +140,15 @@ void MainWindow:: on_mostrarInfo_action(){
 
 void MainWindow:: on_mostrarBitmap_action(){
     bitmap= imageinfowindow->procesar_bitmap(img_output);
+}
+
+
+
+void MainWindow::on_mostrarInfo_Operaciones(){
+    Lab* labWindow = new Lab(this);
+    labWindow->setWindowModality(Qt::ApplicationModal); // Establece la modalidad
+    labWindow->mostrar_menu(img_output);
+    labWindow->show(); // Muestra Lab como una ventana modal
 }
 
 
