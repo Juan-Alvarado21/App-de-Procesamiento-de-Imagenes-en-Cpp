@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Racoonized Image Software ");
     ui->slider->setValue(0);
     filtro_actual= Ninguno;
 
@@ -147,7 +148,8 @@ void MainWindow:: on_mostrarBitmap_action(){
 void MainWindow::on_mostrarInfo_Operaciones(){
     Lab* labWindow = new Lab(this);
     labWindow->setWindowModality(Qt::ApplicationModal); // Establece la modalidad
-    labWindow->mostrar_menu(img_output);
+    QString aux= img_output;
+    labWindow->mostrar_menu(aux);
     labWindow->show(); // Muestra Lab como una ventana modal
 }
 

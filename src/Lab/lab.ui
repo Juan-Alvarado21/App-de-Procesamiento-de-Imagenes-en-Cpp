@@ -125,6 +125,7 @@
      <string>Operaciones con Kernel </string>
     </property>
     <addaction name="actionSobelX"/>
+    <addaction name="actionSobelY"/>
    </widget>
    <widget class="QMenu" name="menuOperaciones_Logicas">
     <property name="title">
@@ -138,6 +139,11 @@
   <action name="actionSobelX">
    <property name="text">
     <string>Filtro de Sobel X</string>
+   </property>
+  </action>
+  <action name="actionSobelY">
+   <property name="text">
+    <string>Filtro de Sobel Y</string>
    </property>
   </action>
  </widget>

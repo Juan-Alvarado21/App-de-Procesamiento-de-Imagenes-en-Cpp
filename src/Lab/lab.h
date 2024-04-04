@@ -23,6 +23,8 @@ public:
     void mostrar_menu(QString );
     QPixmap filtro_sobel_X(QString);
     void on_sobelX_action();
+    QPixmap filtro_sobel_Y(QString);
+    void on_sobelY_action();
 
 
 private:
