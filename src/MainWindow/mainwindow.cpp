@@ -38,14 +38,14 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-/*
+
     //Conexión de los Widgets con eventos en la GUI
     connect(ui->btn_seleccionar,&QPushButton::clicked, this, &MainWindow:: Abrir_imagen);
     connect(ui->btn_restaurar,&QPushButton::clicked, this, &MainWindow:: Restaurar_imagen);
     connect(ui->mostrarInfo, &QAction::triggered,this,&MainWindow::on_mostrarInfo_action );
-<<<<<<< HEAD
+
     //connect(ui->mostrarOperaciones, &QAction::triggered,this,&MainWindow::on_mostrarInfo_action );
-=======
+
     connect(ui->mostrarOperaciones, &QAction::triggered,this,&MainWindow::on_mostrarInfo_Operaciones);
     connect(ui->ver_bitmap, &QAction::triggered,this,&MainWindow::on_mostrarBitmap_action );
     connect(ui->actionBN, &QAction::triggered,this,&MainWindow::on_FiltroBN_action);
@@ -58,20 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionParabola, &QAction::triggered,this,&MainWindow::on_FiltroParabola_action);
     connect(ui->actionParabolaInv, &QAction::triggered,this,&MainWindow::on_FiltroParabolaInv_action);
     connect(ui->actionPosterizado, &QAction::triggered,this,&MainWindow::on_FiltroPosterizado_action);
->>>>>>> temp-actualizaciones
 
-    connect(ui->ver_bitmap, &QAction::triggered,this,&MainWindow::on_mostrarBitmap_action );
-    connect(ui->action_BN, &QAction::triggered,this,&MainWindow::on_FiltroBN_action);
-    connect(ui->action_Binario, &QAction::triggered,this,&MainWindow::on_FiltroBinario_action);
-    connect(ui->action_BinarioInv, &QAction::triggered,this,&MainWindow::on_FiltroBinarioInv_action);
-    connect(ui->slider,&QSlider::valueChanged,this,&MainWindow::manejarCambioSlider);
-    connect(ui->action_Negativo, &QAction::triggered,this,&MainWindow::on_FiltroNegativo_action);
-    connect(ui->action_Intensidad, &QAction::triggered,this,&MainWindow::on_FiltroAjusteBrillo_action);
-    connect(ui->action_Contraste, &QAction::triggered,this,&MainWindow::on_FiltroAjusteContraste_action);
-    connect(ui->action_Parabola, &QAction::triggered,this,&MainWindow::on_FiltroParabola_action);
-    connect(ui->action_ParabolaInv, &QAction::triggered,this,&MainWindow::on_FiltroParabolaInv_action);
-    connect(ui->action_Posterizado, &QAction::triggered,this,&MainWindow::on_FiltroPosterizado_action);
-*/
 
     connect(ui->slider, &QSlider::valueChanged, this, [=](int value){
         ui->labelValue->setText(QString::number(value));
