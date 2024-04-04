@@ -4,6 +4,7 @@
 #include "src/Transformations/transformaciones.h"
 #include <QDateTime>
 #include<QDebug>
+#include <QIcon>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->slider->setValue(0);
-    filtro_actual= Ninguno;
+
 
 
     /* Estilo Css del slider para el escalar  */
@@ -23,7 +24,6 @@ MainWindow::MainWindow(QWidget *parent)
             margin: 2px 0;
         }
 
-
         QSlider::handle:horizontal {
             background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #BA55D3, stop:1 #8A2BE2); /* Gradiente para el controlador */
             border: 1px solid #5c5c5c;
@@ -31,12 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
             margin: -2px 0;
             border-radius: 6px;
         }
-
     )");
-
-
-
-
 
 
 
@@ -45,17 +40,19 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btn_seleccionar,&QPushButton::clicked, this, &MainWindow:: Abrir_imagen);
     connect(ui->btn_restaurar,&QPushButton::clicked, this, &MainWindow:: Restaurar_imagen);
     connect(ui->mostrarInfo, &QAction::triggered,this,&MainWindow::on_mostrarInfo_action );
+    //connect(ui->mostrarOperaciones, &QAction::triggered,this,&MainWindow::on_mostrarInfo_action );
+
     connect(ui->ver_bitmap, &QAction::triggered,this,&MainWindow::on_mostrarBitmap_action );
-    connect(ui->actionBN, &QAction::triggered,this,&MainWindow::on_FiltroBN_action);
-    connect(ui->actionBinario, &QAction::triggered,this,&MainWindow::on_FiltroBinario_action);
-    connect(ui->actionBinario_Invertido, &QAction::triggered,this,&MainWindow::on_FiltroBinarioInv_action);
+    connect(ui->action_BN, &QAction::triggered,this,&MainWindow::on_FiltroBN_action);
+    connect(ui->action_Binario, &QAction::triggered,this,&MainWindow::on_FiltroBinario_action);
+    connect(ui->action_BinarioInv, &QAction::triggered,this,&MainWindow::on_FiltroBinarioInv_action);
     connect(ui->slider,&QSlider::valueChanged,this,&MainWindow::manejarCambioSlider);
-    connect(ui->actionNegativo, &QAction::triggered,this,&MainWindow::on_FiltroNegativo_action);
-    connect(ui->actionAjustar_Brillo, &QAction::triggered,this,&MainWindow::on_FiltroAjusteBrillo_action);
-    connect(ui->actionAjustar_Contraste, &QAction::triggered,this,&MainWindow::on_FiltroAjusteContraste_action);
-    connect(ui->actionParabola, &QAction::triggered,this,&MainWindow::on_FiltroParabola_action);
-    connect(ui->actionParabolaInv, &QAction::triggered,this,&MainWindow::on_FiltroParabolaInv_action);
-    connect(ui->actionPosterizado, &QAction::triggered,this,&MainWindow::on_FiltroPosterizado_action);
+    connect(ui->action_Negativo, &QAction::triggered,this,&MainWindow::on_FiltroNegativo_action);
+    connect(ui->action_Intensidad, &QAction::triggered,this,&MainWindow::on_FiltroAjusteBrillo_action);
+    connect(ui->action_Contraste, &QAction::triggered,this,&MainWindow::on_FiltroAjusteContraste_action);
+    connect(ui->action_Parabola, &QAction::triggered,this,&MainWindow::on_FiltroParabola_action);
+    connect(ui->action_ParabolaInv, &QAction::triggered,this,&MainWindow::on_FiltroParabolaInv_action);
+    connect(ui->action_Posterizado, &QAction::triggered,this,&MainWindow::on_FiltroPosterizado_action);
 
 
     connect(ui->slider, &QSlider::valueChanged, this, [=](int value){
@@ -139,6 +136,16 @@ void MainWindow:: on_mostrarBitmap_action(){
     bitmap= imageinfowindow->procesar_bitmap(img_output);
 }
 
+
+/*
+void MainWindow::on_mostrar_Operaciones() {
+
+    Operacion *operacion = new Operaciones(this); // Asegúrate de que se destruya con su padre o gestiona su ciclo de vida adecuadamente
+    operacion->setWindowModality(Qt::ApplicationModal); // Hace que la ventana sea modal a nivel de aplicación
+    operacion->setAttribute(Qt::WA_DeleteOnClose); // Asegura que el objeto se elimine cuando se cierre la ventana
+    operacion->show();
+}
+*/
 
 
 
@@ -335,10 +342,6 @@ void  MainWindow::manejarCambioSlider(int valor)
         on_FiltroPosterizado_action();
         break;
 
-
-    case Ninguno:
-            QMessageBox::critical(this, "Error", "No has aplicado ningun filtro que dependa de rangos.");
-        break;
 
 
    default:

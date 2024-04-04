@@ -14,8 +14,9 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="face-cool">
-    <normaloff>../computer_vision/Analizador/Analizador_imagen/src/MainWindow</normaloff>../computer_vision/Analizador/Analizador_imagen/src/MainWindow</iconset>
+   <iconset>
+    <normaloff>../../docs/img/racoonized_logo.png</normaloff>
+    <normalon>../../docs/img/racoonized_logo2.png</normalon>../../docs/img/racoonized_logo.png</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -191,24 +192,37 @@
     <property name="title">
      <string>Transformaciones</string>
     </property>
-    <addaction name="actionBN"/>
-    <addaction name="actionBinario"/>
-    <addaction name="actionBinario_Invertido"/>
-    <addaction name="actionNegativo"/>
-    <addaction name="actionAjustar_Brillo"/>
-    <addaction name="actionAjustar_Contraste"/>
-    <addaction name="actionParabola"/>
-    <addaction name="actionParabolaInv"/>
-    <addaction name="actionPosterizado"/>
-   </widget>
-   <widget class="QMenu" name="menuPosici_n">
-    <property name="title">
-     <string>Posición</string>
-    </property>
+    <widget class="QMenu" name="menuFiltros_Tonalidades">
+     <property name="title">
+      <string>Conversión y Tono</string>
+     </property>
+     <addaction name="action_BN"/>
+     <addaction name="action_Negativo"/>
+     <addaction name="action_Binario"/>
+     <addaction name="action_BinarioInv"/>
+     <addaction name="action_Posterizado"/>
+    </widget>
+    <widget class="QMenu" name="menuAjuste">
+     <property name="title">
+      <string>Ajuste</string>
+     </property>
+     <addaction name="action_Intensidad"/>
+     <addaction name="action_Contraste"/>
+    </widget>
+    <widget class="QMenu" name="menuEspeciales">
+     <property name="title">
+      <string>Especiales</string>
+     </property>
+     <addaction name="action_Parabola"/>
+     <addaction name="action_ParabolaInv"/>
+    </widget>
+    <addaction name="menuFiltros_Tonalidades"/>
+    <addaction name="menuAjuste"/>
+    <addaction name="menuEspeciales"/>
    </widget>
    <widget class="QMenu" name="menuAlgoritmos_ML">
     <property name="title">
-     <string>Algoritmos ML </string>
+     <string>Algoritmos </string>
     </property>
    </widget>
    <widget class="QMenu" name="menuInformaci_n">
@@ -218,9 +232,15 @@
     <addaction name="mostrarInfo"/>
     <addaction name="ver_bitmap"/>
    </widget>
+   <widget class="QMenu" name="menuTransformaciones_Geom_tricas">
+    <property name="title">
+     <string>Operaciones</string>
+    </property>
+    <addaction name="mostrarOperaciones"/>
+   </widget>
    <addaction name="menuOpciones"/>
    <addaction name="menuTransformaciones"/>
-   <addaction name="menuPosici_n"/>
+   <addaction name="menuTransformaciones_Geom_tricas"/>
    <addaction name="menuAlgoritmos_ML"/>
    <addaction name="menuInformaci_n"/>
   </widget>
@@ -288,6 +308,56 @@
   <action name="actionPosterizado">
    <property name="text">
     <string>Posterizado</string>
+   </property>
+  </action>
+  <action name="action_BN">
+   <property name="text">
+    <string>Blanco y Negro</string>
+   </property>
+  </action>
+  <action name="action_Negativo">
+   <property name="text">
+    <string>Negativo</string>
+   </property>
+  </action>
+  <action name="action_Binario">
+   <property name="text">
+    <string>Binario</string>
+   </property>
+  </action>
+  <action name="action_BinarioInv">
+   <property name="text">
+    <string>Binario Invertido</string>
+   </property>
+  </action>
+  <action name="action_Posterizado">
+   <property name="text">
+    <string>Posterizado</string>
+   </property>
+  </action>
+  <action name="action_Intensidad">
+   <property name="text">
+    <string>Ajustar Brillo</string>
+   </property>
+  </action>
+  <action name="action_Contraste">
+   <property name="text">
+    <string>Ajustar Contraste</string>
+   </property>
+  </action>
+  <action name="action_Parabola">
+   <property name="text">
+    <string>Parábola</string>
+   </property>
+  </action>
+  <action name="action_ParabolaInv">
+   <property name="text">
+    <string>Parábola Invertida</string>
+   </property>
+  </action>
+  <action name="mostrarOperaciones">
+   <property name="text">
+    <string>Abrir Menú</string>
    </property>
   </action>
  </widget>
