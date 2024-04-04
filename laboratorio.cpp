@@ -12,3 +12,4 @@ Laboratorio::~Laboratorio()
 {
     delete ui;
 }
+cdc
