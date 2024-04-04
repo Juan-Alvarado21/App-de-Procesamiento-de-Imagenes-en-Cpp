@@ -35,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-
+/*
     //Conexión de los Widgets con eventos en la GUI
     connect(ui->btn_seleccionar,&QPushButton::clicked, this, &MainWindow:: Abrir_imagen);
     connect(ui->btn_restaurar,&QPushButton::clicked, this, &MainWindow:: Restaurar_imagen);
@@ -53,7 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->action_Parabola, &QAction::triggered,this,&MainWindow::on_FiltroParabola_action);
     connect(ui->action_ParabolaInv, &QAction::triggered,this,&MainWindow::on_FiltroParabolaInv_action);
     connect(ui->action_Posterizado, &QAction::triggered,this,&MainWindow::on_FiltroPosterizado_action);
-
+*/
 
     connect(ui->slider, &QSlider::valueChanged, this, [=](int value){
         ui->labelValue->setText(QString::number(value));
