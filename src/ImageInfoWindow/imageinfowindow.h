@@ -12,6 +12,7 @@
 #include<QColor>
 #include <QDebug>
 #include"libs/qcustomplot.h"
+#include<QIcon>
 
 //Estructura pixel para los canales RGB
 

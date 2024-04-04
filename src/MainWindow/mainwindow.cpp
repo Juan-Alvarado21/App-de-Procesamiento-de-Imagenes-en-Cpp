@@ -5,6 +5,7 @@
 #include <QDateTime>
 #include<QDebug>
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -48,11 +49,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->ver_bitmap, &QAction::triggered,this,&MainWindow::on_mostrarBitmap_action );
     connect(ui->actionBN, &QAction::triggered,this,&MainWindow::on_FiltroBN_action);
     connect(ui->actionBinario, &QAction::triggered,this,&MainWindow::on_FiltroBinario_action);
-    connect(ui->actionBinario_Invertido, &QAction::triggered,this,&MainWindow::on_FiltroBinarioInv_action);
+    connect(ui->actionBinarioInv, &QAction::triggered,this,&MainWindow::on_FiltroBinarioInv_action);
     connect(ui->slider,&QSlider::valueChanged,this,&MainWindow::manejarCambioSlider);
     connect(ui->actionNegativo, &QAction::triggered,this,&MainWindow::on_FiltroNegativo_action);
-    connect(ui->actionAjustar_Brillo, &QAction::triggered,this,&MainWindow::on_FiltroAjusteBrillo_action);
-    connect(ui->actionAjustar_Contraste, &QAction::triggered,this,&MainWindow::on_FiltroAjusteContraste_action);
+    connect(ui->actionBrillo, &QAction::triggered,this,&MainWindow::on_FiltroAjusteBrillo_action);
+    connect(ui->actionContraste, &QAction::triggered,this,&MainWindow::on_FiltroAjusteContraste_action);
     connect(ui->actionParabola, &QAction::triggered,this,&MainWindow::on_FiltroParabola_action);
     connect(ui->actionParabolaInv, &QAction::triggered,this,&MainWindow::on_FiltroParabolaInv_action);
     connect(ui->actionPosterizado, &QAction::triggered,this,&MainWindow::on_FiltroPosterizado_action);

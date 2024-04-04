@@ -191,15 +191,39 @@
     <property name="title">
      <string>Transformaciones</string>
     </property>
-    <addaction name="actionBN"/>
-    <addaction name="actionBinario"/>
-    <addaction name="actionBinario_Invertido"/>
-    <addaction name="actionNegativo"/>
-    <addaction name="actionAjustar_Brillo"/>
-    <addaction name="actionAjustar_Contraste"/>
-    <addaction name="actionParabola"/>
-    <addaction name="actionParabolaInv"/>
-    <addaction name="actionPosterizado"/>
+    <widget class="QMenu" name="menuConversi_n">
+     <property name="title">
+      <string>Conversión</string>
+     </property>
+     <addaction name="actionBN"/>
+     <addaction name="actionNegativo"/>
+     <addaction name="actionPosterizado"/>
+    </widget>
+    <widget class="QMenu" name="menuUmbralizado">
+     <property name="title">
+      <string>Umbralizado</string>
+     </property>
+     <addaction name="actionBinario"/>
+     <addaction name="actionBinarioInv"/>
+    </widget>
+    <widget class="QMenu" name="menuAjuste">
+     <property name="title">
+      <string>Ajuste</string>
+     </property>
+     <addaction name="actionBrillo"/>
+     <addaction name="actionContraste"/>
+    </widget>
+    <widget class="QMenu" name="menuEspeciales">
+     <property name="title">
+      <string>Especiales</string>
+     </property>
+     <addaction name="actionParabola"/>
+     <addaction name="actionParabolaInv"/>
+    </widget>
+    <addaction name="menuConversi_n"/>
+    <addaction name="menuUmbralizado"/>
+    <addaction name="menuAjuste"/>
+    <addaction name="menuEspeciales"/>
    </widget>
    <widget class="QMenu" name="menuPosici_n">
     <property name="title">
@@ -235,27 +259,17 @@
     <string>Ver Bitmap</string>
    </property>
   </action>
-  <action name="Filtro_BN">
-   <property name="text">
-    <string>Blanco y Negro</string>
-   </property>
-  </action>
-  <action name="filtroBN">
-   <property name="text">
-    <string>Filtro BN</string>
-   </property>
-  </action>
-  <action name="actionBN">
-   <property name="text">
-    <string>BN</string>
-   </property>
-  </action>
   <action name="actionBinario">
    <property name="text">
     <string>Binario</string>
    </property>
   </action>
-  <action name="actionBinario_Invertido">
+  <action name="actionBN">
+   <property name="text">
+    <string>Blanco y Negro</string>
+   </property>
+  </action>
+  <action name="actionBinarioInv">
    <property name="text">
     <string>Binario Invertido</string>
    </property>
@@ -265,24 +279,24 @@
     <string>Negativo</string>
    </property>
   </action>
-  <action name="actionAjustar_Brillo">
+  <action name="actionBrillo">
    <property name="text">
-    <string>Ajustar Brillo</string>
+    <string>Brillo</string>
    </property>
   </action>
-  <action name="actionAjustar_Contraste">
+  <action name="actionContraste">
    <property name="text">
-    <string>Ajustar Contraste</string>
+    <string>Contraste</string>
    </property>
   </action>
   <action name="actionParabola">
    <property name="text">
-    <string>Parábola</string>
+    <string>Parabola</string>
    </property>
   </action>
   <action name="actionParabolaInv">
    <property name="text">
-    <string>Parábola Invertida</string>
+    <string>Parabola Invertida</string>
    </property>
   </action>
   <action name="actionPosterizado">

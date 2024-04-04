@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    lab.cpp \
     libs/qcustomplot.cpp \
     src/ImageInfoWindow/imageinfowindow.cpp \
     src/MainWindow/mainwindow.cpp \
@@ -16,12 +17,14 @@ SOURCES += \
     src/main.cpp \
 
 HEADERS += \
+    lab.h \
     libs/qcustomplot.h \
     src/ImageInfoWindow/imageinfowindow.h \
     src/MainWindow/mainwindow.h \
     src/Transformations/transformaciones.h \
 
 FORMS += \
+    lab.ui \
     src/ImageInfoWindow/imageinfowindow.ui \
     src/MainWindow/mainwindow.ui
 

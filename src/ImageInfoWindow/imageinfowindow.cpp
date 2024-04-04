@@ -11,7 +11,8 @@ ImageInfoWindow::ImageInfoWindow(QWidget *parent) :
 
 
     ui->setupUi(this);
-
+    //Setteamos el logo
+    setWindowIcon(QIcon("/home/juan/computer_vision/Analizador/Analizador_imagen/docs/img/racoonized_logo.png"));
     // Declaramos las Gráficas en el Widget
     graphTotal = ui->CustomPlot->addGraph();
     graphRed = ui->CustomPlot->addGraph();

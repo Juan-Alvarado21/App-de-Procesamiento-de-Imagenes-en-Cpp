@@ -9,6 +9,7 @@
 #include<QFileDialog>
 #include "src/ImageInfoWindow/imageinfowindow.h"
 #include "src/Transformations/transformaciones.h"
+#include<QIcon>
 
 
 
